@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IvanAyao — Creative Studio</title>
+  <meta name="description" content="IvanAyao is a small creative studio building brands that climb higher and stand out.">
+  <link rel="icon" href="assets/logo.png">
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <div class="curtain"><img src="assets/logo.png" alt=""></div>
+
+  <div class="page" id="page">
+    <main class="home" id="home" data-view="list">
+      <p class="home-tagline" data-tagline data-reveal></p>
+
+      <div class="view-switch" role="group" aria-label="Layout" data-reveal="fade">
+        <button type="button" data-view="list" aria-pressed="true">LIST</button>
+        <button type="button" data-view="gallery" aria-pressed="false">GALLERY</button>
+      </div>
+
+      <div class="theme-switch home-theme" role="group" aria-label="Colour theme" data-reveal="fade">
+        <button type="button" data-theme="light">LIGHT</button>
+        <button type="button" data-theme="dark">DARK</button>
+        <button type="button" data-theme="system">SYSTEM</button>
+      </div>
+
+      <!-- List view: titles first, imagery on hover -->
+      <nav class="work-rows" id="work-rows" aria-label="Projects"></nav>
+
+      <!-- Gallery view: image cards (also used on touch devices) -->
+      <div class="work-gallery">
+        <div></div>
+        <div class="home-list" id="work-list"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

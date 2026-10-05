@@ -25,6 +25,7 @@ Then open http://localhost:5173. You can also open `index.html` directly in a br
 ## Common edits
 - **Brand name, email, phone, address:** edit `SITE` in `js/data.js`.
 - **Accent colour:** edit `--accent` in `css/style.css`.
-- **Images:** replace the `picsum.photos` placeholder URLs in `js/data.js` and `studio.html`.
-- **Add a project or article:** add an object to `PROJECTS` or `ARTICLES`. It appears automatically.
+- **Project images** live in `assets/projects/<slug>/`: `cover.jpg` (3:4, home page), `full.jpg` (full-page website screenshot) and gallery images. Insight and team images are still `picsum.photos` placeholders.
+- **Add a project:** create `assets/projects/<slug>/`, then add an entry to `PROJECTS` in `js/data.js` (the comment above the list explains each field). Add `url: "https://…"` to show a "Visit website" button.
+- **Add an article:** add an object to `ARTICLES`.
 - **Contact form:** there is no backend yet. Connect the `submit` handler in `js/main.js` (search for `contact()`) to Formspree, Netlify Forms, or your own API.

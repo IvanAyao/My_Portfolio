@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insights — IvanAyao</title>
+  <link rel="icon" href="assets/logo.png">
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="insights">
+  <div class="curtain"><img src="assets/logo.png" alt=""></div>
+
+  <div class="page" id="page">
+    <main>
+      <section class="i-hero">
+        <p data-reveal>NOTES, IDEAS AND SELECTED PERSPECTIVES ON ART DIRECTION, BRAND AND IMAGE-MAKING.</p>
+        <h1 class="display" data-split="chars">INSIGHTS</h1>
+      </section>
+
+      <section class="i-layout" style="padding-bottom:120px">
+        <div class="filters" role="group" aria-label="Filter insights" data-reveal>
+          <button type="button" data-filter="all" aria-pressed="true">ALL</button>
+          <button type="button" data-filter="Article" aria-pressed="false">ARTICLES</button>
+          <button type="button" data-filter="Lab" aria-pressed="false">LAB</button>
+        </div>
+        <div class="i-grid" id="posts"></div>
+      </section>
+
+      <section class="section faq">
+        <h2 class="section-title" data-split="lines">QUESTIONS,<br>ANSWERED</h2>
+        <div data-faq></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
