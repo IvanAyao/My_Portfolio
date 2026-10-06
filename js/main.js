@@ -353,6 +353,29 @@
         setView(b.dataset.view);
       }));
       if (store.get("homeView") === "gallery") setView("gallery");
+      // Touch / small screens have no hover: the row nearest the middle of the screen becomes active
+      // while scrolling (titles only at the very top). Tap a row to preview it, tap again to open it.
+      const touchMode = matchMedia("(max-width: 900px), (hover: none)");
+      const rows = $$(".wrow");
+      const setActive = (row) => rows.forEach((r) => r.classList.toggle("is-active", r === row));
+      let spyQueued = false;
+      const spy = () => {
+        spyQueued = false;
+        if (!touchMode.matches) return setActive(null);
+        if (page.scrollTop < 60) return setActive(null);
+        const mid = innerHeight * 0.5;
+        let best = null, bestDist = Infinity;
+        rows.forEach((r) => {
+          const b = r.getBoundingClientRect();
+          const dist = Math.abs(b.top + b.height / 2 - mid);
+          if (dist < bestDist) { best = r; bestDist = dist; }
+        });
+        setActive(best);
+      };
+      page.addEventListener("scroll", () => { if (!spyQueued) { spyQueued = true; requestAnimationFrame(spy); } }, { passive: true });
+      rows.forEach((r) => r.addEventListener("click", (e) => {
+        if (touchMode.matches && !r.classList.contains("is-active")) { e.preventDefault(); setActive(r); }
+      }));
     },
 
     project() {
